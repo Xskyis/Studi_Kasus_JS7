@@ -4,93 +4,84 @@ public class DataSiakad03 {
     Scanner sc = new Scanner(System.in);
 
     // Array of Mahasiswa03 objects
-    Mahasiswa03[] mahasiswaArray = new Mahasiswa03[3];
+    Mahasiswa03[] mhsArr = new Mahasiswa03[3];
     // Array of Matakuliah03 objects
-    Matakuliah03[] matakuliahArray = new Matakuliah03[3];
+    Matakuliah03[] matkulArr = new Matakuliah03[3];
     // Array of Penilaian03 objects
-    Penilaian03[] penilaianArray = new Penilaian03[5];
+    Penilaian03[] nilaiArr = new Penilaian03[5];
 
-    // Constructor to initialize the arrays with sample data
     DataSiakad03() {
-        // Initialize Mahasiswa03 objects
-        mahasiswaArray[0] = new Mahasiswa03("22001", "Ali Rahman", "TI");
-        mahasiswaArray[1] = new Mahasiswa03("22002", "Budi Santoso", "TI");
-        mahasiswaArray[2] = new Mahasiswa03("22003", "Citra Dewi", "SI");
+        mhsArr[0] = new Mahasiswa03("22001", "Ali Rahman", "Informatika");
+        mhsArr[1] = new Mahasiswa03("22002", "Budi Santoso", "Informatika");
+        mhsArr[2] = new Mahasiswa03("22003", "Citra Dewi", "Sistem Informasi Bisnis");
 
-        // Initialize Matakuliah03 objects
-        matakuliahArray[0] = new Matakuliah03("MK001", "Struktur Data", 3);
-        matakuliahArray[1] = new Matakuliah03("MK002", "Basis Data", 3);
-        matakuliahArray[2] = new Matakuliah03("MK003", "Desain Web", 3);
+        matkulArr[0] = new Matakuliah03("MK001", "Struktur Data", 3);
+        matkulArr[1] = new Matakuliah03("MK002", "Basis Data", 3);
+        matkulArr[2] = new Matakuliah03("MK003", "Desain Web", 3);
 
-        // Initialize Penilaian03 objects
-        penilaianArray[0] = new Penilaian03(mahasiswaArray[0], matakuliahArray[0], 80, 85, 90);
-        penilaianArray[1] = new Penilaian03(mahasiswaArray[0], matakuliahArray[1], 60, 75, 70);
-        penilaianArray[2] = new Penilaian03(mahasiswaArray[1], matakuliahArray[0], 75, 70, 80);
-        penilaianArray[3] = new Penilaian03(mahasiswaArray[2], matakuliahArray[1], 85, 90, 95);
-        penilaianArray[4] = new Penilaian03(mahasiswaArray[2], matakuliahArray[2], 80, 90, 65);
+        nilaiArr[0] = new Penilaian03(mhsArr[0], matkulArr[0], 80, 85, 90);
+        nilaiArr[1] = new Penilaian03(mhsArr[0], matkulArr[1], 60, 75, 70);
+        nilaiArr[2] = new Penilaian03(mhsArr[1], matkulArr[0], 75, 70, 80);
+        nilaiArr[3] = new Penilaian03(mhsArr[2], matkulArr[1], 85, 90, 95);
+        nilaiArr[4] = new Penilaian03(mhsArr[2], matkulArr[2], 80, 90, 65);
 
     }
 
     // Method untuk menampilkan daftar mahasiswa
     void tampilDaftarMahasiswa() {
         System.out.println("Daftar Mahasiswa:");
-        for (int i = 0; i < mahasiswaArray.length; i++) {
-            mahasiswaArray[i].tampilMahasiswa();
+        for (int i = 0; i < mhsArr.length; i++) {
+            mhsArr[i].tampilMahasiswa();
         }
     }
 
     // Method untuk menampilkan daftar matakuliah
     void tampilDaftarMatakuliah() {
         System.out.println("Daftar Matakuliah:");
-        for (int i = 0; i < matakuliahArray.length; i++) {
-            matakuliahArray[i].tampilMatakuliah();
+        for (int i = 0; i < matkulArr.length; i++) {
+            matkulArr[i].tampilMatakuliah();
         }
     }
 
     // Method untuk menampilkan daftar penilaian
     void tampilDaftarPenilaian() {
-        System.out.println("Daftar Penilaian:");
-        for (int i = 0; i < penilaianArray.length; i++) {
-            penilaianArray[i].hitungNilaiAkhir();
-            System.out.println(penilaianArray[i].Mahasiswa.nama + " | " + penilaianArray[i].Matakuliah.namaMK + " | "
-                    + penilaianArray[i].nilaiAkhir);
+        for (int i = 0; i < nilaiArr.length; i++) {
+            nilaiArr[i].hitungNilaiAkhir();
+            nilaiArr[i].tampilPenilaian();
         }
     }
 
     // Method untuk mengurutkan dan menampilkan nilai berdasarkan nilai akhir
     // (menggunakan Bubble Sort)
     void urutkanNilaiAkhir() {
-        for (int i = 0; i < penilaianArray.length - 1; i++) {
-            for (int j = 0; j < penilaianArray.length - i - 1; j++) {
-                penilaianArray[j].hitungNilaiAkhir();
-                penilaianArray[j + 1].hitungNilaiAkhir();
-                if (penilaianArray[j].nilaiAkhir < penilaianArray[j + 1].nilaiAkhir) {
-                    Penilaian03 temp = penilaianArray[j];
-                    penilaianArray[j] = penilaianArray[j + 1];
-                    penilaianArray[j + 1] = temp;
+        for (int i = 0; i < nilaiArr.length - 1; i++) {
+            for (int j = 0; j < nilaiArr.length - i - 1; j++) {
+                nilaiArr[j].hitungNilaiAkhir();
+                nilaiArr[j + 1].hitungNilaiAkhir();
+                if (nilaiArr[j].nilaiAkhir < nilaiArr[j + 1].nilaiAkhir) {
+                    Penilaian03 temp = nilaiArr[j];
+                    nilaiArr[j] = nilaiArr[j + 1];
+                    nilaiArr[j + 1] = temp;
                 }
             }
         }
-        System.out.println("Daftar Penilaian setelah diurutkan berdasarkan nilai akhir:");
         tampilDaftarPenilaian();
     }
 
     // Method untuk mencari mahasiswa berdasarkan NIM (menggunakan Linear Search)
     void cariMahasiswa() {
         System.out.print("Masukkan NIM mahasiswa yang dicari:");
-        String nim = sc.nextLine();
+        String cariNIM = sc.nextLine();
         boolean found = false;
-        for (int i = 0; i < mahasiswaArray.length; i++) {
-            if (mahasiswaArray[i].NIM.equals(nim)) {
-                System.out.println(
-                        "Mahasiswa ditemukan: " + "NIM: " + mahasiswaArray[i].NIM + " | Nama: " +mahasiswaArray[i].nama + " | Prodi: "+ mahasiswaArray[i].prodi);
+        for (int i = 0; i < mhsArr.length; i++) {
+            if (mhsArr[i].NIM.equals(cariNIM)) {
+                System.out.println("Mahasiswa ditemukan: " + "NIM: " + mhsArr[i].NIM + " | Nama: " +mhsArr[i].nama + " | Prodi: "+ mhsArr[i].prodi);
                 found = true;
                 break;
             }
         }
         if (!found) {
-            System.out.println("Mahasiswa dengan NIM " + nim + " tidak ditemukan.");
+            System.out.println("Mahasiswa dengan NIM " + cariNIM + " tidak ditemukan.");
         }
     }
-
 }

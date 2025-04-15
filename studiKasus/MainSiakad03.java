@@ -7,6 +7,7 @@ public class MainSiakad03 {
         int menu;
 
         do {
+            System.out.println();
             System.out.println("=== MENU SISTEM AKADEMIK POLINEMA ===");
             System.out.println("1.Tampilkan Daftar Mahasiswa");
             System.out.println("2.Tampilkan Daftar Matakuliah");
@@ -26,9 +27,11 @@ public class MainSiakad03 {
                     data.tampilDaftarMatakuliah();
                     break;
                 case 3:
+                    System.out.println("Daftar Penilaian (Sebelum Diurutkan):");
                     data.tampilDaftarPenilaian();
                     break;
                 case 4:
+                    System.out.println("Daftar Penilaian (Setelah Diurutkan DESC):");
                     data.urutkanNilaiAkhir();
                     break;
                 case 5:

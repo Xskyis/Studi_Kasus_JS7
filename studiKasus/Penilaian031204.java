@@ -1,12 +1,12 @@
-public class Penilaian03 {
-    Mahasiswa03 Mahasiswa;
-    Matakuliah03 Matakuliah;
+public class Penilaian031204 {
+    Mahasiswa031204 Mahasiswa;
+    Matakuliah031204 Matakuliah;
     double nilaiTugas;
     double nilaiUTS;
     double nilaiUAS;
     double nilaiAkhir;
 
-    Penilaian03(Mahasiswa03 Mahasiswa, Matakuliah03 Matakuliah, double nilaiTugas, double nilaiUTS, double nilaiUAS) {
+    Penilaian031204(Mahasiswa031204 Mahasiswa, Matakuliah031204 Matakuliah, double nilaiTugas, double nilaiUTS, double nilaiUAS) {
         this.Mahasiswa = Mahasiswa;
         this.Matakuliah = Matakuliah;
         this.nilaiTugas = nilaiTugas;

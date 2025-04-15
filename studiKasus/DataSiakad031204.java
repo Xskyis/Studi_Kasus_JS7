@@ -1,29 +1,29 @@
 import java.util.Scanner;
 
-public class DataSiakad03 {
+public class DataSiakad031204 {
     Scanner sc = new Scanner(System.in);
 
     // Array of Mahasiswa03 objects
-    Mahasiswa03[] mhsArr = new Mahasiswa03[3];
+    Mahasiswa031204[] mhsArr = new Mahasiswa031204[3];
     // Array of Matakuliah03 objects
-    Matakuliah03[] matkulArr = new Matakuliah03[3];
+    Matakuliah031204[] matkulArr = new Matakuliah031204[3];
     // Array of Penilaian03 objects
-    Penilaian03[] nilaiArr = new Penilaian03[5];
+    Penilaian031204[] nilaiArr = new Penilaian031204[5];
 
-    DataSiakad03() {
-        mhsArr[0] = new Mahasiswa03("22001", "Ali Rahman", "Informatika");
-        mhsArr[1] = new Mahasiswa03("22002", "Budi Santoso", "Informatika");
-        mhsArr[2] = new Mahasiswa03("22003", "Citra Dewi", "Sistem Informasi Bisnis");
+    DataSiakad031204() {
+        mhsArr[0] = new Mahasiswa031204("22001", "Ali Rahman", "Informatika");
+        mhsArr[1] = new Mahasiswa031204("22002", "Budi Santoso", "Informatika");
+        mhsArr[2] = new Mahasiswa031204("22003", "Citra Dewi", "Sistem Informasi Bisnis");
 
-        matkulArr[0] = new Matakuliah03("MK001", "Struktur Data", 3);
-        matkulArr[1] = new Matakuliah03("MK002", "Basis Data", 3);
-        matkulArr[2] = new Matakuliah03("MK003", "Desain Web", 3);
+        matkulArr[0] = new Matakuliah031204("MK001", "Struktur Data", 3);
+        matkulArr[1] = new Matakuliah031204("MK002", "Basis Data", 3);
+        matkulArr[2] = new Matakuliah031204("MK003", "Desain Web", 3);
 
-        nilaiArr[0] = new Penilaian03(mhsArr[0], matkulArr[0], 80, 85, 90);
-        nilaiArr[1] = new Penilaian03(mhsArr[0], matkulArr[1], 60, 75, 70);
-        nilaiArr[2] = new Penilaian03(mhsArr[1], matkulArr[0], 75, 70, 80);
-        nilaiArr[3] = new Penilaian03(mhsArr[2], matkulArr[1], 85, 90, 95);
-        nilaiArr[4] = new Penilaian03(mhsArr[2], matkulArr[2], 80, 90, 65);
+        nilaiArr[0] = new Penilaian031204(mhsArr[0], matkulArr[0], 80, 85, 90);
+        nilaiArr[1] = new Penilaian031204(mhsArr[0], matkulArr[1], 60, 75, 70);
+        nilaiArr[2] = new Penilaian031204(mhsArr[1], matkulArr[0], 75, 70, 80);
+        nilaiArr[3] = new Penilaian031204(mhsArr[2], matkulArr[1], 85, 90, 95);
+        nilaiArr[4] = new Penilaian031204(mhsArr[2], matkulArr[2], 80, 90, 65);
 
     }
 
@@ -59,7 +59,7 @@ public class DataSiakad03 {
                 nilaiArr[j].hitungNilaiAkhir();
                 nilaiArr[j + 1].hitungNilaiAkhir();
                 if (nilaiArr[j].nilaiAkhir < nilaiArr[j + 1].nilaiAkhir) {
-                    Penilaian03 temp = nilaiArr[j];
+                    Penilaian031204 temp = nilaiArr[j];
                     nilaiArr[j] = nilaiArr[j + 1];
                     nilaiArr[j + 1] = temp;
                 }

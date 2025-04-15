@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class MainSiakad03 {
+public class MainSiakad031204 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        DataSiakad03 data = new DataSiakad03();
+        DataSiakad031204 data = new DataSiakad031204();
         int menu;
 
         do {

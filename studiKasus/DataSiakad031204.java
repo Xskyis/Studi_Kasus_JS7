@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class DataSiakad031204 {
     Scanner sc = new Scanner(System.in);
 
-    // Array of Mahasiswa03 objects
+    // Array Objek dari Mahasiswa
     Mahasiswa031204[] mhsArr = new Mahasiswa031204[3];
-    // Array of Matakuliah03 objects
+    // Array Objek dari Matakuliah
     Matakuliah031204[] matkulArr = new Matakuliah031204[3];
-    // Array of Penilaian03 objects
+    // Array Objek dari Penilaian
     Penilaian031204[] nilaiArr = new Penilaian031204[5];
 
     DataSiakad031204() {

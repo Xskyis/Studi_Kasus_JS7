@@ -73,9 +73,10 @@ public class DataSiakad031204 {
         System.out.print("Masukkan NIM mahasiswa yang dicari:");
         String cariNIM = sc.nextLine();
         boolean found = false;
-        for (int i = 0; i < mhsArr.length; i++) {
-            if (mhsArr[i].NIM.equals(cariNIM)) {
-                System.out.println("Mahasiswa ditemukan: " + "NIM: " + mhsArr[i].NIM + " | Nama: " +mhsArr[i].nama + " | Prodi: "+ mhsArr[i].prodi);
+        for (Mahasiswa031204 mhs : mhsArr) {
+            if (mhs.NIM.equals(cariNIM)) {
+                System.out.print("Mahasiswa ditemukan: ");
+                mhs.tampilMahasiswa();
                 found = true;
                 break;
             }
